@@ -53,4 +53,7 @@ class Player:
     
     def calculate_total(self):
         total = sum(card.value() for card in self.hand)
-        aces = sum()
+        aces = sum(1 for card in self.hand if card.rank=='A')
+
+        while total>21 and aces:
+            
